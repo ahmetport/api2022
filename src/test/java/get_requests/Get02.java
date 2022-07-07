@@ -1,3 +1,5 @@
+package get_requests;
+
 import io.restassured.response.Response;
 import org.junit.Test;
 import static io.restassured.RestAssured.*;
@@ -26,7 +28,7 @@ public class Get02 {
     public void get01(){
 
         //1. Step: Set theUrl
-        String url = "https://restful-booker.herokuapp.com/booking/1005";
+        String url = "https://restful-booker.herokuapp.com/booking/1";
 
         //2. Step: Set the expected data(Post - Put - Patch)
 
@@ -36,7 +38,7 @@ public class Get02 {
         response.prettyPrint();
         //4. Do Assertion
 
-        response.then().assertThat().statusCode(400).statusLine("HTTP/1.1 404 Not Found");
+        response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
 
         //Response body'de bulunan spesifik bir veri nasıl assert edilir:
         //assertTrue() methodu parantezin içindeki değer true is testi geçirir.
