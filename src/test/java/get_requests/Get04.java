@@ -40,12 +40,15 @@ public class Get04 extends JsonplaceholderBaseUrls {
      Response response= given().spec(spec).accept(ContentType.JSON).when().get("/{first}");//soruda when ve then arkaarkaya geldigi için
      response.prettyPrint();
 
+
      //4 STEP Do assertıons
         response.then().
                 assertThat().statusCode(200).
                 contentType(ContentType.JSON).
                 body("id",hasSize(200)
                         ,"title",hasItem("quis eius est sint explicabo"),"userId",hasItems(2,7,9));
+
+
 
 
 

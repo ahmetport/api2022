@@ -7,7 +7,8 @@ import org.junit.Before;
 public class HerokuappBaseUrl {
     protected RequestSpecification spec;
     @Before
-    public void setUp(){
+    public void setUp()
+    {
         spec=new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
     }
 }
