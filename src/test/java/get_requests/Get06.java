@@ -48,37 +48,48 @@ public class Get06 extends HerokuappBaseUrl {
             response.prettyPrint();
 
             //4. Step: Do Assertion
-            //1 YOL
+            //1 YOl
+
+
             response.
                     then().
                     assertThat().statusCode(200).
                     contentType(ContentType.JSON).
-                    body("firstname",equalTo("GGS"),
-                            "lastname",equalTo("FINCH"),
-                            "totalprice", equalTo(111),
-                            "depositpaid", equalTo(true),
-                            "bookingdates.checkin",equalTo("2018-01-01"),
-                            "bookingdates.checkout",equalTo("2019-01-01"));
+                    body("firstname",equalTo("Andrew"),
+                            "lastname",equalTo("Anderson"),
+                            "totalprice", equalTo(163),
+                            "depositpaid", equalTo(false),
+                            "bookingdates.checkin",equalTo("2022-10-03"),
+                            "bookingdates.checkout",equalTo("2022-10-11"));
+
+
+
 
             //2 YOL:JsonPath class kullanıllır
+
             JsonPath jsonPath= response.jsonPath();
-            assertEquals("GGS",jsonPath.getString("firstname"));
-            assertEquals("FINCH",jsonPath.getString("lastname"));
-            assertEquals(111,jsonPath.getInt("totalprice"));
-            assertEquals(true,jsonPath.getBoolean("depositpaid"));
-            assertEquals("2018-01-01",jsonPath.getString("bookingdates.checkin"));
-            assertEquals("2019-01-01",jsonPath.getString("bookingdates.checkout"));
+            assertEquals("Andrew",jsonPath.getString("firstname"));
+            assertEquals("Anderson",jsonPath.getString("lastname"));
+            assertEquals(163,jsonPath.getInt("totalprice"));
+            assertEquals(false,jsonPath.getBoolean("depositpaid"));
+            assertEquals("2022-10-03",jsonPath.getString("bookingdates.checkin"));
+            assertEquals("2022-10-11",jsonPath.getString("bookingdates.checkout"));
+
+
+
 
             //3 yol:Soft Assertıon
             //1 yol:soft assert objesi oluşturur
             SoftAssert softAssert= new SoftAssert();
 
             //obje aracılıgı ile assertıon yapacagım
-            softAssert.assertEquals(jsonPath.getString("firstname"),"GGS","ALTIN PORTAKAL");
-            softAssert.assertEquals(jsonPath.getString("lastname"),"FINCH","GÜLŞAH PORTAKAL");
+            softAssert.assertEquals(jsonPath.getString("firstname"),"Andrew","ALTIN PORTAKAL");
+            softAssert.assertEquals(jsonPath.getString("lastname"),"Anderson","GÜLŞAH PORTAKAL");
 
             //3 ADIM:AssertAll() methodu kullanılır.aksi takdirde kodumuz çalışmaz
             softAssert.assertAll();
+
+
 
 
 

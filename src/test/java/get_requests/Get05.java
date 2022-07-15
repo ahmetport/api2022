@@ -22,7 +22,7 @@ public class Get05 extends HerokuappBaseUrl {
     @Test
     public void get01() {
         //1 step set the Url
-        spec.pathParam("first","booking").queryParams("firstname","Elisa","Vidal","Brown");
+        spec.pathParam("first","booking").queryParams("firstname","Aaron","lastname","Chen");
         //postmanda params kısmında oluşturduk artık url bu oldu
         //https://restful-booker.herokuapp.com/booking?firstname=Aaron&lastname&=Chen
 
@@ -32,8 +32,11 @@ public class Get05 extends HerokuappBaseUrl {
 
         //4 adım Do assertıon
 
+
         response.then().assertThat().statusCode(200);
         assertTrue(response.asString().contains("bookingid"));
+
+
 
 
 
