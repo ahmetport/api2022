@@ -24,12 +24,28 @@ public class JsonUtil {
             javaResult = mapper.readValue(json,cls);//degeri okur ve onun data tipinde bir value ver
             //ya okuyamazsam diyor bende run tıme exceptıon atıyorum
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
         return javaResult;
     }
 
-        //2. Method: Java Objesini Json Dataya  çevirir.(De-Serialization)
+        //2. Method: Java Objesini Json Dataya  çevirir.(Serialization)
+
+    public static String convertJavaObjectToJson(Object obj){
+
+        String jsonResult = null;
+
+        try {
+            jsonResult = mapper.writeValueAsString(obj);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return jsonResult;
+    }
+
 
 }
+
+
