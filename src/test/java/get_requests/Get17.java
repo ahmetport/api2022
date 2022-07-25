@@ -64,10 +64,12 @@ public class Get17  extends DummyRestApiBaseUrl {
 
         //3.Step : Send the get request and get the response
         Response response= given().spec(spec).when().get("/{first}/{second}");
+         response.prettyPrint();
 
 
         //4.Step : Do Assertion
         DummyPojo actualPojo=response.as(DummyPojo.class);
+        System.out.println(actualPojo);
 
         assertEquals(200,response.getStatusCode());
         assertEquals(expectedPojo.getData().getEmployee_name(),actualPojo.getData().getEmployee_name());
