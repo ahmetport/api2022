@@ -60,8 +60,10 @@ public class Post04Pojo extends HerokuappBaseUrl {
 
         //set the expecteddata
         BookingDatesPojo bookıngDatas=new BookingDatesPojo("2021-09-21","2021-12-21");
+        System.out.println(bookıngDatas);//json tipinden döndürdük
         BookingPojo bookıngPojo=new BookingPojo("Ali","Can",999,true,
                 bookıngDatas,"Breakfast with white tea, Dragon juice");
+        System.out.println(bookıngPojo);
 
         //send POST request and get the Response
        Response response = given().spec(spec).contentType(ContentType.JSON).body(bookıngPojo).when().post("{1}");

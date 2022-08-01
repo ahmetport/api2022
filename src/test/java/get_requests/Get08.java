@@ -57,7 +57,7 @@ public class Get08 extends JsonplaceholderBaseUrls {
         //send the request and get the response
        Response response = given().spec(spec).when().get("/{first}/{second}");
        Map<String,Object>actualData = response.as(HashMap.class);//RESPONSE HASH MAP CEVİRDİK
-        System.out.println(actualData);//{id=2, completed=false, title=quis ut nam facilis et officia qui, userId=1}
+        //System.out.println(actualData);//{id=2, completed=false, title=quis ut nam facilis et officia qui, userId=1}
 
         //Do assertıons
         assertEquals(expectedData.get("userId"),actualData.get("userId"));
@@ -83,7 +83,7 @@ public class Get08 extends JsonplaceholderBaseUrls {
         //3. Step: Send the request and get the Response
         Response response = given().spec(spec).when().get("/{first}/{second}");
 
-        Map<String, Object> actualData = response.as(HashMap.class);
+        Map<String, Object> actualData = response.as(HashMap.class);//response map olarak kaydettik
         System.out.println(actualData);
 
         //4. Step: Do Assertion
