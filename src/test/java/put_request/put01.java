@@ -53,9 +53,12 @@ public class put01 extends JsonplaceholderBaseUrls {
         //4. Step: Do Assertion
         Map<String,Object> actualDataMap = response.as(HashMap.class);
 
-        assertEquals(expectedDataMap.get("userId"), actualDataMap.get("userId"));
-        assertEquals(expectedDataMap.get("title"), actualDataMap.get("title"));
-        assertEquals(expectedDataMap.get("completed"), actualDataMap.get("completed"));
+        assertEquals(expectedDataMap.get("userId"),
+                actualDataMap.get("userId"));
+        assertEquals(expectedDataMap.get("title"),
+                actualDataMap.get("title"));
+        assertEquals(expectedDataMap.get("completed"),
+                actualDataMap.get("completed"));
 
     }
 }
